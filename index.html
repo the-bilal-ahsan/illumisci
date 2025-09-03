@@ -615,7 +615,17 @@
 		body {
 			margin: 0;
 			padding: 0;
-			overflow: hidden;
+			-ms-overflow-style: none;
+			/* For Internet Explorer and Edge */
+			scrollbar-width: none;
+			/* For Firefox */
+			/* overflow-y: scroll; */
+			overflow-x: hidden;
+		}
+
+		body::-webkit-scrollbar {
+			display: none;
+			/* For Chrome, Safari, and Opera */
 		}
 
 		rs-bgvideo video {
