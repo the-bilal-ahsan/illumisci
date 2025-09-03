@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+		<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+		<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+		<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+		<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>Home-Frontpage final - Slider Revolution</title>
+			<meta name="description" content="Slider Revolution Example" />
+			<meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition" />
+			<meta name="author" content="ThemePunch" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- LOAD JQUERY LIBRARY -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+			
+			<!-- LOADING FONTS AND ICONS -->
+			<link href="https://fonts.googleapis.com/css?family=Roboto:400%2C300%2C500%2C700&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+			
+			<link rel="stylesheet" type="text/css" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+			<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+			
+			<!-- REVOLUTION STYLE SHEETS -->
+			<link rel="stylesheet" type="text/css" href="css/rs6.css">
+			<!-- REVOLUTION LAYERS STYLES -->
+						<!-- REVOLUTION JS FILES -->
+			
+		<script>
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+					<script src="js/rbtools.min.js"></script>
+							<script src="js/rs6.min.js"></script>
+							
+			<script>function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+
+			
+		</head>
+		
+		<body>
+		
+
+			<!-- START HomeFrontpage final REVOLUTION SLIDER 6.6.20 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_24_1_wrapper" data-alias="home-frontpage-11" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;">
+				<rs-module id="rev_slider_24_1" style="" data-version="6.6.20">
+					<rs-slides style="overflow: hidden; position: absolute;">
+						<rs-slide style="position: absolute;" data-key="rs-97" data-title="Home-Frontpage-video" data-thumb="assets/IllumiSci-Logo-Reveal-Version-seven_97-50x100.jpeg" data-duration="12000ms" data-anim="adpr:false;ms:10;" data-in="o:1;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="" title="IllumiSci-Logo-Reveal-Version-seven_97.jpeg" width="1920" height="800" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/IllumiSci-Logo-Reveal-Version-seven_97.jpeg" data-no-retina>
+							<rs-bgvideo 
+								data-video="w:100%;h:100%;rwd:false;l:false;ptimer:true;vfc:false;"
+								data-mp4="assets/IllumiSci-Logo-Reveal-Version-seven.mp4"
+							></rs-bgvideo>
+<!---->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-96" data-title="Slide 2" data-duration="23020ms" data-anim="adpr:false;ms:10;" data-in="o:1;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="Slide 2" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/transparent.png" data-bg="c:#262626;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-24-slide-96-layer-39" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:169px;y:716px;"
+								data-text="s:30;l:30;fw:300;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-padding="t:5;r:7;b:5;l:25;"
+								data-border="bos:solid;boc:#3e4ec9;bow:5px,5px,5px,5px;bor:30px,0px,0px,30px;"
+								data-frame_1="st:15190;sp:800;sR:15190;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:7030;"
+								style="z-index:48;background-color:#3e4ec9;font-family:'Roboto';"
+							>So  Simple, 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-40" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:346px;y:716px;"
+								data-text="s:30;l:30;fw:300;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-padding="t:5;r:10;b:5;l:10;"
+								data-border="bos:solid;boc:#3e4ec9;bow:5px,5px,5px,5px;"
+								data-frame_0="x:-100%;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="st:14980;sp:2000;sR:14980;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:6040;"
+								style="z-index:50;background-color:#3e4ec9;font-family:'Roboto';"
+							>So  Versatile, 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-41" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:536px;y:716px;"
+								data-text="s:30;l:30;fw:300;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-padding="t:5;r:25;b:5;l:7;"
+								data-border="bos:solid;boc:#3e4ec9;bow:5px,5px,5px,5px;bor:0,30px,30px,0;"
+								data-frame_0="x:-100%;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="st:15640;sp:2000;sR:15640;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:5380;"
+								style="z-index:49;background-color:#3e4ec9;font-family:'Roboto';"
+							>So Effective. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-42" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:734px;y:151px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:246px;"
+								data-frame_0="y:bottom;o:1;"
+								data-frame_1="st:1750;sp:12530;sR:1750;"
+								data-frame_999="o:0;st:16280;sp:0;sR:2000;"
+								style="z-index:12;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="450" height="442" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/slide_4.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-44" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:171px;y:151px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:246px;"
+								data-frame_0="y:top;o:1;"
+								data-frame_1="st:2170;sp:12110;sR:2170;"
+								data-frame_999="o:0;st:16280;sp:0;sR:2000;"
+								style="z-index:5;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="450" height="442" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/slide_4.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-45" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:171px;y:430px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:246px;"
+								data-frame_0="x:left;o:1;"
+								data-frame_1="st:1810;sp:12470;sR:1810;"
+								data-frame_999="o:0;st:16280;sp:0;sR:2000;"
+								style="z-index:9;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="450" height="442" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/slide_4.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-46" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:452px;y:150px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:246px;"
+								data-frame_0="x:left;o:1;"
+								data-frame_1="st:2210;sp:12070;sR:2210;"
+								data-frame_999="o:0;st:16280;sp:0;sR:2000;"
+								style="z-index:10;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="450" height="442" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/slide_4.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-47" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:734px;y:432px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:246px;"
+								data-frame_0="x:right;o:1;"
+								data-frame_1="st:1700;sp:12580;sR:1700;"
+								data-frame_999="o:0;st:16280;sp:0;sR:2000;"
+								style="z-index:13;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="450" height="442" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/slide_4.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-48" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:452px;y:431px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:246px;"
+								data-frame_0="y:bottom;o:1;"
+								data-frame_1="st:2910;sp:11370;sR:2910;"
+								data-frame_999="o:0;st:16280;sp:0;sR:2000;"
+								style="z-index:11;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="450" height="442" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/slide_4.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-51" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:-9px;y:-31px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:615px;h:606px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;e:nothing;st:w;sp:10;sR:5850;"
+								style="z-index:33;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="600" height="591" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/IllumiTile-Illuminated-n1.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-53" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:-10px;y:249px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:615px;h:606px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:5850;"
+								style="z-index:34;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="600" height="591" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/IllumiTile-Illuminated-n1.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-54" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:346px;y:259px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:182px;h:25px;"
+								data-frame_0="x:-600px;y:-300px;o:1;"
+								data-frame_1="st:3730;sp:7950;sR:3730;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:11340;"
+								style="z-index:24;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1743" height="237" data-lazyload="assets/IllumiSnap-Harness.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-55" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:200px;y:399px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:191px;h:26px;"
+								data-frame_0="x:left;o:1;rZ:271;"
+								data-frame_1="rZ:270deg;st:3160;sp:8500;sR:3160;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:11360;"
+								style="z-index:20;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1743" height="237" data-lazyload="assets/IllumiSnap-Harness.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-56" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:619px;y:540px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:188px;h:26px;"
+								data-frame_0="x:600px;y:300px;o:1;"
+								data-frame_1="st:3640;sp:8020;sR:3640;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:11360;"
+								style="z-index:22;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1743" height="237" data-lazyload="assets/IllumiSnap-Harness.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-57" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:626px;y:259px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:183px;h:25px;"
+								data-frame_0="x:600px;y:-350px;o:1;"
+								data-frame_1="st:1660;sp:10000;sR:1660;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:11360;"
+								style="z-index:23;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1743" height="237" data-lazyload="assets/IllumiSnap-Harness.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-58" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:338px;y:539px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:190px;h:26px;"
+								data-frame_0="x:-600px;y:300px;o:1;"
+								data-frame_1="st:2660;sp:8980;sR:2660;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:11380;"
+								style="z-index:21;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1743" height="237" data-lazyload="assets/IllumiSnap-Harness.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-59" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:271px;y:-31px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:615px;h:606px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;st:w;sp:0;sR:5850;"
+								style="z-index:35;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="600" height="591" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/IllumiTile-Illuminated-n1.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-60" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:271px;y:250px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:615px;h:606px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;st:w;sp:0;sR:5850;"
+								style="z-index:36;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="600" height="591" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/IllumiTile-Illuminated-n1.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-61" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:553px;y:-31px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:615px;h:606px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;st:w;sp:0;sR:5850;"
+								style="z-index:37;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="600" height="591" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/IllumiTile-Illuminated-n1.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-62" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:907px;y:263px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:300px;h:645px;"
+								data-frame_0="x:500px;y:100px;o:1;"
+								data-frame_1="st:5820;sp:8000;sR:5820;"
+								data-frame_999="o:0;st:w;sp:10;sR:9200;"
+								style="z-index:26;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1996" height="4289" data-lazyload="assets/IllumioSnap-Power-Harness.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-63" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:553px;y:252px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:615px;h:606px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;st:w;sp:0;sR:5850;"
+								style="z-index:38;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="600" height="591" data-lazyload="//www.illumisci.com/wp-content/uploads/2020/07/IllumiTile-Illuminated-n1.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-64" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:171px;y:150px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:248px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;e:nothing;st:w;sp:10;sR:5850;"
+								style="z-index:14;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1920" height="1905" data-lazyload="assets/IllumiTile-Illuminated.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-65" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:734px;y:431px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:248;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;st:w;sp:0;sR:5850;"
+								style="z-index:19;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1920" height="1905" data-lazyload="assets/IllumiTile-Illuminated.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-66" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:452px;y:430px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:248px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;st:w;sp:0;sR:5850;"
+								style="z-index:17;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1920" height="1905" data-lazyload="assets/IllumiTile-Illuminated.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-67" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:171px;y:429px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:248px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:5850;"
+								style="z-index:15;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1920" height="1905" data-lazyload="assets/IllumiTile-Illuminated.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-68" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:734px;y:150px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:248px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;st:w;sp:0;sR:5850;"
+								style="z-index:18;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1920" height="1905" data-lazyload="assets/IllumiTile-Illuminated.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-69" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:452px;y:149px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:250px;h:248px;"
+								data-frame_1="st:13940;sp:3230;sR:13940;"
+								data-frame_999="o:0;st:w;sp:0;sR:5850;"
+								style="z-index:16;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1920" height="1905" data-lazyload="assets/IllumiTile-Illuminated.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-70" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:346px;y:259px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:182px;h:25px;"
+								data-frame_1="st:10380;sp:3490;sR:10380;"
+								data-frame_999="o:0;st:w;sp:0;sR:9150;"
+								style="z-index:27;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="523" height="71" data-lazyload="assets/IllumiSnap-Harness_lighter.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-71" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:340px;y:538px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:182px;h:25px;"
+								data-frame_1="st:10380;sp:3490;sR:10380;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:9150;"
+								style="z-index:28;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="523" height="71" data-lazyload="assets/IllumiSnap-Harness_lighter.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-72" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:621px;y:540px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:182px;h:25px;"
+								data-frame_1="st:10380;sp:3490;sR:10380;"
+								data-frame_999="o:0;st:w;sp:0;sR:9150;"
+								style="z-index:29;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="523" height="71" data-lazyload="assets/IllumiSnap-Harness_lighter.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-73" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:627px;y:258px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:182px;h:25px;"
+								data-frame_1="st:10380;sp:3490;sR:10380;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:9150;"
+								style="z-index:30;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="523" height="71" data-lazyload="assets/IllumiSnap-Harness_lighter.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-74" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:768px;y:398px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:182px;h:25px;"
+								data-frame_0="rZ:90;"
+								data-frame_1="rZ:90deg;st:10380;sp:3490;sR:10380;"
+								data-frame_999="o:0;st:w;sp:0;sR:9150;"
+								style="z-index:31;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="523" height="71" data-lazyload="assets/IllumiSnap-Harness_lighter.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-75" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:200px;y:398px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:191px;h:26px;"
+								data-frame_0="rZ:90;"
+								data-frame_1="rZ:90;st:10380;sp:3490;sR:10380;"
+								data-frame_999="o:0;st:w;sp:0;sR:9150;"
+								style="z-index:32;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="523" height="71" data-lazyload="assets/IllumiSnap-Harness_lighter.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-76" 
+								class="rs-selectable"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:764px;y:399px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:191px;h:26px;"
+								data-frame_0="x:right;o:1;rZ:271;"
+								data-frame_1="rZ:270deg;st:3210;sp:8500;sR:3210;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:11310;"
+								style="z-index:25;"
+							><img src="assets/dummy.png" alt="" class="tp-rs-img rs-lazyload" width="1743" height="237" data-lazyload="assets/IllumiSnap-Harness.png" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-78" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:170px;y:30px;"
+								data-text="s:60;l:65;fw:300;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-padding="r:50;b:15;l:50;"
+								data-border="bos:solid;boc:#3e4ec9;bow:10px,0,0,0;bor:50px,50px,50px,50px;"
+								data-frame_1="st:9970;sp:8200;sR:9970;"
+								data-frame_999="o:0;st:w;sp:10;sR:4850;"
+								style="z-index:41;background-color:#3e4ec9;font-family:'Roboto';"
+							>The  Amazing  IllumiTile<sup style="font-size:20px;">®</sup> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-81" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-tsh="c:#000000;h:1px;v:1px;"
+								data-rsp_ch="on"
+								data-xy="x:399px;y:186px;"
+								data-text="s:60;l:22;fw:300;a:inherit;"
+								data-vbility="f,f,f,f"
+								data-frame_1="st:6060;sp:8200;sR:6060;"
+								data-frame_999="o:0;st:w;sp:10;sR:8760;"
+								style="z-index:42;font-family:'Roboto';"
+							>Amazing 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-82" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:171px;y:16px;"
+								data-text="s:60;l:65;fw:300;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-padding="t:15;r:25;b:10;l:25;"
+								data-border="bos:solid;boc:#3e4ec9;bow:10px,10px,10px,10px;bor:50px,50px,50px,50px;"
+								data-frame_1="st:7990;sp:8200;sR:7990;"
+								data-frame_999="o:0;st:w;sp:10;sR:6830;"
+								style="z-index:43;background-color:#3e4ec9;font-family:'Roboto';"
+							>The  Amazing IllumiTile<sup style="font-size:6px;">®</sup> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-83" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-tsh="c:#000000;h:1px;v:1px;"
+								data-rsp_ch="on"
+								data-xy="x:281px;y:86px;"
+								data-text="s:60;l:22;fw:300;a:inherit;"
+								data-vbility="f,f,f,f"
+								data-frame_1="st:6060;sp:8200;sR:6060;"
+								data-frame_999="o:0;st:w;sp:10;sR:8760;"
+								style="z-index:44;font-family:'Roboto';"
+							>The 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-85" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:167px;y:704px;"
+								data-text="s:30;l:30;fw:300;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-padding="t:5;r:15;b:5;l:15;"
+								data-border="bos:solid;boc:#3e4ec9;bow:5px,5px,5px,5px;bor:30px,0px,0px,30px;"
+								data-frame_1="st:15190;sp:800;sR:15190;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:7030;"
+								style="z-index:47;background-color:#3e4ec9;font-family:'Roboto';"
+							>So  Simple 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-86" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:336px;y:704px;"
+								data-text="s:30;l:30;fw:300;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-padding="t:5;r:15;b:5;l:15;"
+								data-border="bos:solid;boc:#3e4ec9;bow:5px,5px,5px,5px;"
+								data-frame_0="x:-100%;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="st:14980;sp:2000;sR:14980;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:6040;"
+								style="z-index:46;background-color:#3e4ec9;font-family:'Roboto';"
+							>So  Versatile 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-96-layer-87" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:527px;y:704px;"
+								data-text="s:30;l:30;fw:300;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-padding="t:5;r:15;b:5;l:15;"
+								data-border="bos:solid;boc:#3e4ec9;bow:5px,5px,5px,5px;bor:0px,30px,30px,0px;"
+								data-frame_0="x:-100%;"
+								data-frame_0_mask="u:t;"
+								data-frame_1="st:15640;sp:2000;sR:15640;"
+								data-frame_1_mask="u:t;"
+								data-frame_999="o:0;e:nothing;st:w;sp:0;sR:5380;"
+								style="z-index:45;background-color:#3e4ec9;font-family:'Roboto';"
+							>So Effective. 
+							</rs-layer><!--
+
+							--><a
+								id="slider-24-slide-96-layer-89" 
+								class="rs-layer rev-btn rs-selectable"
+								href="https://www.illumisci.com/product/illumitile-light-engine-ile/" target="_self" rel="nofollow"
+								data-type="button"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:800px;y:704px;"
+								data-text="w:normal;s:25;l:50;fw:500;"
+								data-dim="minh:0px;"
+								data-vbility="f,f,f,t"
+								data-padding="r:40;l:40;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_0="y:84px;"
+								data-frame_1="st:16560;sp:1500;sR:16560;"
+								data-frame_999="o:0;st:w;sp:0;sR:4960;"
+								data-frame_hover="bgc:#007aff;bor:5px,5px,5px,5px;e:power1.inOut;bri:120%;"
+								style="z-index:40;background-color:#562c73;font-family:'Roboto';"
+							>See More 
+							</a><!--
+
+							--><a
+								id="slider-24-slide-96-layer-90" 
+								class="rs-layer rev-btn rs-selectable"
+								href="https://www.illumisci.com/product/illumitile-light-engine-ile/" target="_self" rel="nofollow"
+								data-type="button"
+								data-color="#ffffff"
+								data-xy="x:832px;y:716px;"
+								data-text="w:normal;s:18;l:45;fw:500;"
+								data-dim="minh:0px;"
+								data-vbility="t,t,t,f"
+								data-rsp_o="off"
+								data-rsp_bd="off"
+								data-padding="r:40;l:40;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_0="y:84px;"
+								data-frame_1="st:16570;sp:1500;sR:16570;"
+								data-frame_999="o:0;st:w;sp:0;sR:4950;"
+								data-frame_hover="bgc:#007aff;bor:5px,5px,5px,5px;e:power1.inOut;bri:120%;"
+								style="z-index:39;background-color:#562c73;font-family:'Roboto';"
+							>See More 
+							</a><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-111" data-title="Slide" data-thumb="assets/IllumiSci-UNUM-Platform-Explainer_1111-50x100.jpeg" data-duration="12000ms" data-anim="adpr:false;ms:10;" data-in="o:1;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="" title="IllumiSci-UNUM-Platform-Explainer_1111.jpeg" width="1920" height="1088" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/IllumiSci-UNUM-Platform-Explainer_1111.jpeg" data-no-retina>
+							<rs-bgvideo 
+								data-video="w:100%;h:100%;ar:4:3;rwd:false;l:false;ptimer:true;vfc:false;"
+								data-mp4="assets/IllumiSci-UNUM-Platform-Explainer.mp4"
+							></rs-bgvideo>
+<!---->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-98" data-title="Products-video" data-thumb="assets/Addressable-LED-Strip1_98-50x100.jpeg" data-duration="7300ms" data-anim="adpr:false;ms:10;" data-in="o:1;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="" title="Addressable-LED-Strip1_98.jpeg" width="1920" height="1080" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/Addressable-LED-Strip1_98.jpeg" data-no-retina>
+							<rs-bgvideo 
+								data-video="w:100%;h:100%;ar:4:3;nse:false;sat:true;rwd:false;l:false;ptimer:true;vfc:false;"
+								data-mp4="assets/Addressable-LED-Strip1.mp4"
+							></rs-bgvideo>
+<!--
+							--><rs-layer
+								id="slider-24-slide-98-layer-2" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#fff"
+								data-rsp_ch="on"
+								data-xy="x:19px;y:-57px;"
+								data-text="w:normal;s:36;l:159;ls:-2px;fw:700;"
+								data-dim="w:300px;"
+								data-frame_1="x:7px;y:82px;st:2990;sp:2960;sR:2990;"
+								data-frame_999="o:0;st:w;sR:3050;"
+								style="z-index:9;font-family:'Roboto';"
+							>Our LED Products 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-98-layer-3" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:19px;y:34px;"
+								data-text="w:normal;s:30;l:49;ls:0px;"
+								data-dim="w:554px;"
+								data-frame_1="x:7px;y:84px;st:4750;sp:1270;sR:4750;"
+								data-frame_999="o:0;st:w;sR:2980;"
+								style="z-index:10;font-family:'Roboto';"
+							>Bring Your Ideas To Light 
+							</rs-layer><!--
+
+							--><a
+								id="slider-24-slide-98-layer-5" 
+								class="rs-layer rev-btn rs-selectable"
+								href="https://www.illumisci.com/products-family-overview/" target="_self" rel="nofollow"
+								data-type="button"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:21px;y:94px;"
+								data-text="w:normal;s:16;l:50;fw:500;a:center;"
+								data-dim="w:239px;h:50px;minh:0px;"
+								data-padding="r:40;l:40;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_1="x:4px;y:82px;st:4300;sp:3000;sR:4300;"
+								data-frame_999="o:0;st:w;sR:1700;"
+								data-frame_hover="bgc:#007aff;bor:5px,5px,5px,5px;e:power1.inOut;bri:120%;"
+								style="z-index:11;background-color:#562c73;font-family:'Roboto';"
+							>View Our Products 
+							</a><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-99" data-title="Services-video" data-thumb="assets/LAFC-Video-5_99-50x100.jpeg" data-duration="4000ms" data-anim="adpr:false;ms:10;" data-in="o:1;" data-out="a:false;">
+							<img src="assets/dummy.png" alt="" title="LAFC-Video-5_99.jpeg" width="1920" height="1080" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="assets/LAFC-Video-5_99.jpeg" data-no-retina>
+							<rs-bgvideo 
+								data-video="w:100%;h:100%;ar:4:3;nse:false;sat:true;rwd:false;l:false;ptimer:true;vfc:false;"
+								data-mp4="assets/LAFC-Video-5.mp4"
+							></rs-bgvideo>
+<!--
+							--><rs-layer
+								id="slider-24-slide-99-layer-6" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:130px;y:198px;"
+								data-text="w:normal;"
+								data-frame_1="st:2160;sp:1170;sR:2160;"
+								data-frame_999="o:0;st:w;sR:5670;"
+								style="z-index:9;font-family:'Roboto';"
+							>We Take Your Ideas and Turn Them Into Reality 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-24-slide-99-layer-7" 
+								class="rs-selectable"
+								data-type="text"
+								data-color="#fff"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:130px;y:156px;"
+								data-text="w:normal;s:40;l:40;ls:-2px;fw:700;"
+								data-dim="minh:0px;"
+								data-frame_1="st:2470;sp:870;sR:2470;"
+								data-frame_999="o:0;st:w;sR:5660;"
+								style="z-index:10;font-family:'Roboto';"
+							>You Dream It, We Create It 
+							</rs-layer><!--
+
+							--><a
+								id="slider-24-slide-99-layer-8" 
+								class="rs-layer rev-btn rs-selectable"
+								href="https://www.illumisci.com/services/" target="_self" rel="nofollow"
+								data-type="button"
+								data-color="#ffffff"
+								data-rsp_ch="on"
+								data-xy="x:r;xo:130px;y:232px;"
+								data-text="w:normal;s:18;l:50;fw:500;"
+								data-dim="minh:0px;"
+								data-padding="r:40;l:40;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_1="st:2940;sp:380;sR:2940;"
+								data-frame_999="o:0;st:w;sR:5680;"
+								data-frame_hover="bgc:#007aff;bor:5px,5px,5px,5px;e:power1.inOut;bri:120%;"
+								style="z-index:11;background-color:#562c73;font-family:'Roboto';"
+							>View Our Services 
+							</a><!--
+-->						</rs-slide>
+					</rs-slides>
+				</rs-module>
+				<script>
+					
+				</script>
+<script>
+		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
+</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+
+				<script>
+					var	tpj = jQuery;
+					if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+					if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+					RS_MODULES.modules["revslider241"] = {once: RS_MODULES.modules["revslider241"]!==undefined ? RS_MODULES.modules["revslider241"].once : undefined, init:function() {
+						window.revapi24 = window.revapi24===undefined || window.revapi24===null || window.revapi24.length===0  ? document.getElementById("rev_slider_24_1") : window.revapi24;
+						if(window.revapi24 === null || window.revapi24 === undefined || window.revapi24.length==0) { window.revapi24initTry = window.revapi24initTry ===undefined ? 0 : window.revapi24initTry+1; if (window.revapi24initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider241"].init()}); return;}
+						window.revapi24 = jQuery(window.revapi24);
+						jQuery.noConflict();
+						if(window.revapi24.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_24_1"); return;}
+						revapi24.revolutionInit({
+								revapi:"revapi24",
+								DPR:"ax1",
+								sliderLayout:"fullscreen",
+								visibilityLevels:"1240,1024,778,480",
+								gridwidth:1280,
+								gridheight:800,
+								lazyType:"smart",
+								spinner:"spinner2",
+								maxHeight:"0px",
+								perspective:600,
+								perspectiveType:"local",
+								editorheight:"800,768,960,300",
+								responsiveLevels:"1240,1024,778,480",
+								ignoreHeightChange:false,
+								fullScreenOffsetContainer:".gt3_header_builder",
+								progressBar:{disableProgressBar:true},
+								navigation: {
+									wheelCallDelay:1000,
+									onHoverStop:false,
+									bullets: {
+										enable:true,
+										tmp:"",
+										style:"hesperiden",
+										h_align:"right",
+										v_align:"center",
+										h_offset:10,
+										v_offset:0,
+										direction:"vertical"
+									}
+								},
+								viewPort: {
+									global:true,
+									globalDist:"-200px",
+									enable:false
+								},
+								fallbacks: {
+									allowHTML5AutoPlayOnAndroid:true
+								},
+						});
+						
+					}} // End of RevInitScript
+					if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+				</script>
+
+
+
+<style>rs-bgvideo video{top:0 !important; left:0 !important; height:100% !important; width:100% !important}rs-bgvideo{background:#000000}#rev_slider_24_1_wrapper .hesperiden.tp-bullets{}#rev_slider_24_1_wrapper .hesperiden.tp-bullets:before{content:' ';position:absolute;width:100%;height:100%;background:transparent;padding:10px;margin-left:-10px;margin-top:-10px;box-sizing:content-box; border-radius:8px}#rev_slider_24_1_wrapper .hesperiden .tp-bullet{width:12px;height:12px;position:absolute;background:#999999;  background:-moz-linear-gradient(top,#999999 0%,#e1e1e1 100%);  background:-webkit-linear-gradient(top,#999999 0%,#e1e1e1 100%);  background:-o-linear-gradient(top,#999999 0%,#e1e1e1 100%);  background:-ms-linear-gradient(top,#999999 0%,#e1e1e1 100%);  background:linear-gradient(to bottom,#999999 0%,#e1e1e1 100%);  filter:progid:dximagetransform.microsoft.gradient(  startcolorstr='#999999',endcolorstr='#e1e1e1',gradienttype=0 ); border:2px solid #e5e5e5;border-radius:50%;cursor:pointer;box-sizing:content-box}#rev_slider_24_1_wrapper .hesperiden .tp-bullet.rs-touchhover,#rev_slider_24_1_wrapper .hesperiden .tp-bullet.selected{background:rgba(0,0,0,0.21)}#rev_slider_24_1_wrapper .hesperiden .tp-bullet-image{}#rev_slider_24_1_wrapper .hesperiden .tp-bullet-title{}#rev_slider_24_1_wrapper rs-loader.spinner2{background-color:#ffffff !important}</style>
+		</body>
+				</html>
+		
