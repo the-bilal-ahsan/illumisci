@@ -148,7 +148,8 @@
 						data-frame_0="y:bottom;o:1;" data-frame_1="st:1750;sp:12530;sR:1750;"
 						data-frame_999="o:0;st:16280;sp:0;sR:2000;" style="z-index:12;"><img src="assets/dummy.png"
 							alt="" class="tp-rs-img rs-lazyload" width="450" height="442"
-							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png" data-no-retina>
+							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png"
+							data-no-retina>
 					</rs-layer><!--
 
 							--><rs-layer id="slider-24-slide-96-layer-44" class="rs-selectable" data-type="image" data-rsp_ch="on"
@@ -156,7 +157,8 @@
 						data-frame_0="y:top;o:1;" data-frame_1="st:2170;sp:12110;sR:2170;"
 						data-frame_999="o:0;st:16280;sp:0;sR:2000;" style="z-index:5;"><img src="assets/dummy.png"
 							alt="" class="tp-rs-img rs-lazyload" width="450" height="442"
-							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png" data-no-retina>
+							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png"
+							data-no-retina>
 					</rs-layer><!--
 
 							--><rs-layer id="slider-24-slide-96-layer-45" class="rs-selectable" data-type="image" data-rsp_ch="on"
@@ -164,7 +166,8 @@
 						data-frame_0="x:left;o:1;" data-frame_1="st:1810;sp:12470;sR:1810;"
 						data-frame_999="o:0;st:16280;sp:0;sR:2000;" style="z-index:9;"><img src="assets/dummy.png"
 							alt="" class="tp-rs-img rs-lazyload" width="450" height="442"
-							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png" data-no-retina>
+							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png"
+							data-no-retina>
 					</rs-layer><!--
 
 							--><rs-layer id="slider-24-slide-96-layer-46" class="rs-selectable" data-type="image" data-rsp_ch="on"
@@ -172,7 +175,8 @@
 						data-frame_0="x:left;o:1;" data-frame_1="st:2210;sp:12070;sR:2210;"
 						data-frame_999="o:0;st:16280;sp:0;sR:2000;" style="z-index:10;"><img src="assets/dummy.png"
 							alt="" class="tp-rs-img rs-lazyload" width="450" height="442"
-							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png" data-no-retina>
+							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png"
+							data-no-retina>
 					</rs-layer><!--
 
 							--><rs-layer id="slider-24-slide-96-layer-47" class="rs-selectable" data-type="image" data-rsp_ch="on"
@@ -180,7 +184,8 @@
 						data-frame_0="x:right;o:1;" data-frame_1="st:1700;sp:12580;sR:1700;"
 						data-frame_999="o:0;st:16280;sp:0;sR:2000;" style="z-index:13;"><img src="assets/dummy.png"
 							alt="" class="tp-rs-img rs-lazyload" width="450" height="442"
-							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png" data-no-retina>
+							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png"
+							data-no-retina>
 					</rs-layer><!--
 
 							--><rs-layer id="slider-24-slide-96-layer-48" class="rs-selectable" data-type="image" data-rsp_ch="on"
@@ -188,7 +193,8 @@
 						data-frame_0="y:bottom;o:1;" data-frame_1="st:2910;sp:11370;sR:2910;"
 						data-frame_999="o:0;st:16280;sp:0;sR:2000;" style="z-index:11;"><img src="assets/dummy.png"
 							alt="" class="tp-rs-img rs-lazyload" width="450" height="442"
-							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png" data-no-retina>
+							data-lazyload="//static.wixstatic.com/media/7b67ce_c77bbe8dcbd64da2acc38f3a932e8e4d~mv2.png"
+							data-no-retina>
 					</rs-layer><!--
 
 							--><rs-layer id="slider-24-slide-96-layer-51" class="rs-selectable" data-type="image" data-rsp_ch="on"
@@ -553,6 +559,12 @@
 	<!-- END REVOLUTION SLIDER -->
 
 	<script>
+
+		function sendDataToWix() {
+			const data = "Hello from iframe!";
+			window.parent.postMessage(data, "https://yoursite.com"); // Replace with your site's URL
+		}
+
 		var tpj = jQuery;
 		if (window.RS_MODULES === undefined) window.RS_MODULES = {};
 		if (RS_MODULES.modules === undefined) RS_MODULES.modules = {};
